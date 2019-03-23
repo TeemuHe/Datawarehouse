@@ -1,17 +1,17 @@
 ﻿using System;
-using PersonExampleDB.Models;
-using PersonExampleDB.Repositories;
-using PersonExampleDB.Views;
+using System.Collections.Generic;
+using PhonePersonDB.Models;
+using PhonePersonDB.Repositories;
+using PhonePersonDB.Views;
 
-namespace PersonExampleDB
+namespace PhonePersonDB
 {
     class Program
     {
-        private static readonly PersonRepository _personRepository = new PersonRepository();
         static void Main(string[] args)
         {
             string userInput = null;
-            UIModel uiModel = new UIModel();
+            UIModels uiModel = new UIModels();
             string msg = "";
             do
             {
@@ -19,23 +19,20 @@ namespace PersonExampleDB
                 switch (userInput.ToUpper())
                 {
                     case "C":
-                        uiModel.CreatePerson();
+                        uiModel.Create();
                         msg = "---------------------------------";
                         break;
                     case "R":
-                        uiModel.ReadById(5003);
+                        uiModel.ReadById(15);
                         msg = "---------------------------------";
                         break;
                     case "U":
-                        uiModel.UpdatePerson();
+                        uiModel.Update();
                         msg = "---------------------------------";
                         break;
                     case "D":
-                        uiModel.DeletePerson(5004);
+                        uiModel.Delete(13);
                         msg = "---------------------------------";
-                        break;
-                    case "K":
-                        uiModel.ReadByCity();
                         break;
                     case "X":
                         msg = "Lopetetaan...";
@@ -50,8 +47,8 @@ namespace PersonExampleDB
         static string Choise()
         {
             Console.WriteLine("[C] Luodaan henkilö tietokantaan\n[R] Haetaan henkilö ID:n mukaan" +
-                "\n[U] Päivitä henkilö\n[D] Poista henkilö tietokannasta\n[K] Hae kaupungin tiedot\n[X] Lopeta");
-            Console.Write("Valitse mitä tehään: ");
+                "\n[U] Päivitä henkilö\n[D] Poista henkilö tietokannasta\n[X] Lopeta");
+            Console.Write("Valitse mitä tehdään: ");
             string choise = Console.ReadLine();
             return choise;
         }
