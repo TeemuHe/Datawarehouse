@@ -12,6 +12,19 @@ namespace PhonePersonDB.Models
             Phone = new HashSet<Phone>();
         }
 
+        public Person(string name, short age)
+        {
+            Name = name;
+            Age = age;
+            Phone = new HashSet<Phone>();
+        }
+        public Person (string name, short age, ICollection<Phone> phones)
+        {
+            Name = name;
+            Age = age;
+            Phone = phones;
+        }
+
         public long Id { get; set; }
         [StringLength(10)]
         public string Name { get; set; }

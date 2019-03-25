@@ -23,7 +23,7 @@ namespace PhonePersonDB
                         msg = "---------------------------------";
                         break;
                     case "R":
-                        uiModel.ReadById(15);
+                        uiModel.ReadById(4);
                         msg = "---------------------------------";
                         break;
                     case "U":

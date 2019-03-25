@@ -28,16 +28,24 @@ namespace PhonePersonDB.Views
             var person = _personRepository.ReadById(id);
 
             if (person == null)
+            {
                 Console.WriteLine($"Asiakasta numerolla {id} ei löydy!");
+            }
             else
-                Console.WriteLine($"ID: {person.Id}\tNimi: {person.Name}\tIkä: {person.Age}\tNumero: {person.Phone}");
+            {
+                Console.WriteLine($"{person.Id}    {person.Name}    {person.Age}v.\nNumero:");
+                foreach (var p in person.Phone)
+                {
+                    Console.WriteLine($"\t{p.Type}\t{p.Number}");
+                }
+            }
         }
 
         public void Update()
         {
             Person updatePerson = _personRepository.ReadById(3);
-            updatePerson.Name = "Anthony";
-            updatePerson.Age = 15;
+            updatePerson.Name = "Jaska";
+            updatePerson.Age = 22;
             //updatePerson.Phone = 04400440;
             _personRepository.Update(3, updatePerson);
         }

@@ -33,19 +33,38 @@ namespace PhonePersonDB.Repositories
             }
         }
 
+        internal object ReadById()
+        {
+            throw new NotImplementedException();
+        }
+
+        internal object Person(long id)
+        {
+            throw new NotImplementedException();
+        }
+
         public Person ReadById(long id)
         {
-            var person = _phonepersondbContext.Person.Find(id);
+            var person = _phonepersondbContext.Person
+                .Include(p => p.Phone)
+                .Where(p => p.Id == id)
+                .FirstOrDefault();
             return person;
         }
 
-        //public List<Person> Read()
-        //{
-        //    var persons = _phonepersondbContext.Person
-        //        .Include(p=>p.Phone)
-        //        .ToList();
-        //    return persons;
-        //}
+        public List<Person> Read()
+        {
+            var persons = _phonepersondbContext.Person
+                .Include(p=>p.Phone)
+                .ToList();
+            return persons;
+        }
+
+        public Person GetPhone(int id)
+        {
+            var persons = _phonepersondbContext.Person.Include(p => p.Phone).Single(p => p.Id == id);
+            return persons;
+        }
 
         public void Update(long id, Person person)
         {
