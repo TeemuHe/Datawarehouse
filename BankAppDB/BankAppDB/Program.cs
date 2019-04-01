@@ -17,15 +17,17 @@ namespace BankAppDB
                 userInput = Choise();
                 switch (userInput.ToUpper())
                 {
-                    //case: "1":
+                    //case "1":
                     //    msg = "ok";
                     //    break;
                     case "1":
                         uiModels.CreateBank();
                         break;
+                    case "2":
+                        uiModels.UpdateBank();
+                        break;
                     case "3":
-                        uiModels.DeleteBank(8);
-                        msg = "Pankki poistettu";
+                        uiModels.DeleteBank(10);
                         break;
                     case "X":
                         msg = "Sovellus suljetaan...";

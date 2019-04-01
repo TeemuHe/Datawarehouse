@@ -37,5 +37,13 @@ namespace BankAppDB.Views
                 Console.WriteLine($"{bank.Id}   {bank.Name}");
             }
         }
+
+        public void UpdateBank()
+        {
+            Bank updateBank = _bankRepository.ReadById(9);
+            updateBank.Name = "PankkiTesti";
+            updateBank.BIC = "ABCDEFGHIJ";
+            _bankRepository.Update(9, updateBank);
+        }
     }
 }

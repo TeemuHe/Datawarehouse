@@ -35,7 +35,7 @@ namespace BankAppDB.Repositories
         public Bank ReadById(long id)
         {
             var bank = _bankdbContext.Bank
-                .Include(b => b.Account)
+                //.Include(b => b.BIC)
                 .Where(b => b.Id == id)
                 .FirstOrDefault();
             return bank;
@@ -43,7 +43,17 @@ namespace BankAppDB.Repositories
 
         public void Update(long id, Bank bank)
         {
-            throw new NotImplementedException();
+            var isBankReal = ReadById(id);
+            if (isBankReal != null)
+            {
+                _bankdbContext.Update(bank);
+                _bankdbContext.SaveChanges();
+                Console.WriteLine("Tiedot tallennettu onnistuneesti");
+            }
+            else
+            {
+                Console.WriteLine($"Päivitys epäonnistui - Pankkia ei ole olemassa");
+            }
         }
     }
 }
