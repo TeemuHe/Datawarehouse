@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.489
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "AdventureWorksTask", "AdventureWorksTask\AdventureWorksTask.dtproj", "{5B3CF782-596B-4356-BFED-61D4166DACFE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5B3CF782-596B-4356-BFED-61D4166DACFE}.Development|Default.ActiveCfg = Development
+		{5B3CF782-596B-4356-BFED-61D4166DACFE}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BB3A22CE-89EA-47F1-A701-9D95A3988670}
+	EndGlobalSection
+EndGlobal
