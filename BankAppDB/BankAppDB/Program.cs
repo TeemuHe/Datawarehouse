@@ -49,7 +49,7 @@ namespace BankAppDB
                         msg = "Asiakas poistettu";
                         break;
                     case "9":
-                        uiModels.ReadCustomerInfo(15); // doesn´t print balance
+                        uiModels.ReadCustomerInfo(15); // doesn´t print balance or accounts name
                         break;
                     case "10":
                         uiModels.AddTransaction(); //doesn´t work
