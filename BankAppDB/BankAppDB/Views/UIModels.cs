@@ -16,8 +16,8 @@ namespace BankAppDB.Views
         public void CreateBank()
         {
             Bank bank = new Bank();
-            bank.Name = "Uusi pankki";
-            bank.BIC = "4545445454";
+            bank.Name = "Uusi pankki X";
+            bank.BIC = "1235555555";
             Console.WriteLine("Uusi pankki luotu");
             _bankRepository.Create(bank);
         }
@@ -27,20 +27,19 @@ namespace BankAppDB.Views
             Customer customer = new Customer();
 
             customer.BankId = 7;
-            customer.Firstname = "Herra";
-            customer.Lastname = "Rahamies";
+            customer.Firstname = "Jukka";
+            customer.Lastname = "Korhonen";
             customer.Account = new List<Account>
             {
                 new Account
                 {
-                    Balance = 505000,
-                    Name = "Pienitili",
-                    IBAN = "FIPALJONRAHAA",
+                    Balance = 10,
+                    Name = "Jukan Rahat",
+                    IBAN = "FIRAHAA",
                     BankId = 7
                 }
             };
             _customerRepository.Create(customer);
-
         }
 
         internal void ReadCustomerByBankId(long bankId)
@@ -120,8 +119,8 @@ namespace BankAppDB.Views
         public void UpdateBank()
         {
             Bank updateBank = _bankRepository.ReadById(9);
-            updateBank.Name = "Pankki123";
-            updateBank.BIC = "ASDFGHJKL";
+            updateBank.Name = "Päivitetty pankki";
+            updateBank.BIC = "ASDKKKKKL";
             _bankRepository.Update(9, updateBank);
         }
 

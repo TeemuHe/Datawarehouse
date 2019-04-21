@@ -26,7 +26,7 @@ namespace BankAppDB
                         msg = "Pankin tiedot päivitetty";
                         break;
                     case "3":
-                        uiModels.DeleteBank(10);
+                        uiModels.DeleteBank(9);
                         msg = "Pankki poistettu";
                         break;
                     case "4":
@@ -45,7 +45,7 @@ namespace BankAppDB
                         msg = "Asiakkaan tiedot päivitetty";
                         break;
                     case "8":
-                        uiModels.DeleteCustomer(28);
+                        uiModels.DeleteCustomer(30);
                         msg = "Asiakas poistettu";
                         break;
                     case "9":
