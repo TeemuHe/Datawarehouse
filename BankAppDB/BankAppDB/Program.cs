@@ -34,7 +34,7 @@ namespace BankAppDB
                         msg = "Asiakas ja tili luotu";
                         break;
                     case "5":
-                        uiModels.ReadAccountsByBankId(7); //ei pelitä
+                        uiModels.ReadAccountsByBankId(7); //doesn´t print accounts
                         break;
                     case "6":
                         uiModels.ReadCustomerByBankId(6);
@@ -49,13 +49,13 @@ namespace BankAppDB
                         msg = "Asiakas poistettu";
                         break;
                     case "9":
-                        uiModels.ReadCustomerInfo(15); // ei tulosta balancee ja tilin nimee
+                        uiModels.ReadCustomerInfo(15); // doesn´t print balance
                         break;
                     case "10":
-                        uiModels.AddTransaction(); //joku fiba
+                        uiModels.AddTransaction(); //doesn´t work
                         break;
                     case "11":
-                        uiModels.ReadTransactionById(15); // lukee kaikki tränsäksonit
+                        uiModels.ReadTransactionById(15);
                         msg = "Tilitapahtumat tulostettu";
                         break;
                     case "X":
