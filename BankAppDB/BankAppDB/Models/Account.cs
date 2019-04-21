@@ -11,6 +11,22 @@ namespace BankAppDB.Models
         {
             Transaction = new HashSet<Transaction>();
         }
+        public Account(string iban, string name, long bankId, decimal balance)
+        {
+            IBAN = iban;
+            Name = name;
+            BankId = bankId;
+            Balance = balance;
+            Transaction = new HashSet<Transaction>();
+        }
+        public Account(string iban, string name, long bankId, decimal balance, ICollection<Transaction> transaction)
+        {
+            IBAN = iban;
+            Name = name;
+            BankId = bankId;
+            Balance = balance;
+            Transaction = transaction;
+        }
 
         [Key]
         [StringLength(20)]
@@ -30,5 +46,6 @@ namespace BankAppDB.Models
         public virtual Customer Customer { get; set; }
         [InverseProperty("IBANNavigation")]
         public virtual ICollection<Transaction> Transaction { get; set; }
+        public long Id { get; internal set; }
     }
 }

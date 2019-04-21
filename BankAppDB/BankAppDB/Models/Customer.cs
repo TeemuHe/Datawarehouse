@@ -12,6 +12,22 @@ namespace BankAppDB.Models
             Account = new HashSet<Account>();
         }
 
+        public Customer(string firstname, string lastname, int bankId)
+        {
+            Firstname = firstname;
+            Lastname = lastname;
+            BankId = bankId;
+            Account = new HashSet<Account>();
+        }
+
+        public Customer(string firstname, string lastname, int bankId, ICollection<Account> accounts)
+        {
+            Firstname = firstname;
+            Lastname = lastname;
+            BankId = bankId;
+            Account = accounts;
+        }
+
         public long Id { get; set; }
         [Required]
         [StringLength(50)]

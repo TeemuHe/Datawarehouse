@@ -7,6 +7,17 @@ namespace BankAppDB.Models
 {
     public partial class Transaction
     {
+        public Transaction()
+        {
+        }
+
+        public Transaction(string iban, decimal amount, DateTime timestamp)
+        {
+            IBAN = iban;
+            Amount = amount;
+            Timestamp = timestamp;
+        }
+
         public long Id { get; set; }
         [Required]
         [StringLength(20)]

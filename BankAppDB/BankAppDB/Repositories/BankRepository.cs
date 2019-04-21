@@ -35,7 +35,6 @@ namespace BankAppDB.Repositories
         public Bank ReadById(long id)
         {
             var bank = _bankdbContext.Bank
-                //.Include(b => b.BIC)
                 .Where(b => b.Id == id)
                 .FirstOrDefault();
             return bank;
